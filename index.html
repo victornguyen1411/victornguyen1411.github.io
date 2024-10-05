@@ -50,6 +50,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="css/form.css">
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -146,14 +147,66 @@
 									<p>At <b>An Thoi, Phu Quoc Island</b> Followed by dinner at <b>Long Phung Restaurance</b></p>
 									<hreft src="https://www.google.com/maps/place/nh%C3%A0+h%C3%A0ng+long+ph%E1%BB%A5ng+4/@10.0297504,104.0133707,18.16z/data=!4m15!1m8!3m7!1s0x31a7969be90b1dd9:0x7d9bbf570f779067!2zQW4gVGjhu5tpLCBUcC4gUGjDuiBRdeG7kWMsIEtpw6puIEdpYW5nLCBWaeG7h3QgTmFt!3b1!8m2!3d10.042699!4d104.0130391!16s%2Fg%2F1tkv785_!3m5!1s0x31a797172b97f8b1:0xb35cc7b0db2451a6!8m2!3d10.0294772!4d104.014877!16s%2Fg%2F11j0qm2l1y?entry=ttu" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
+						
+							</div>
+							<div class="text-center mt-2 mb-2">
+								<p>Due to some reasons, we can only treat in our hometown,<br/> Phu Quoc and Binh Phuoc. <br/>Please consider carefully to be able to join us.<br/> Your presence is our honor, thank you.</p>
+								<button id="btn-join">I can join</button>
 							</div>
 						</div>
-					</div>
+					</div>				
 				</div>
 			</div>
 		</div>
 	</div>
+	
 
+
+	<div id="form-join">
+		<form id="form2sheet" action="https://script.google.com/macros/s/AKfycbw9Gyccar6o2DDteD-mPqk0MyYARM0zKaSGHTtj8zltKn19C9tvKEBUne3Mka2c58aX/exec" method="POST" >
+			<p class="text-center title">Please help to fill in the form</p>
+			<div class="form-group">
+				<p>Full name:</p>
+				<input type="text" name="FullName" autocomplete="false" value="" class="ch3ch-b0t input-text">
+			</div>
+			<div class="mt-2">
+				<p>Which location you can join with us</p>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<label><input type="checkbox" name="location1" value="Binh Phuoc">Binh Phuoc</label>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<label><input type="checkbox" name="location2" value="Phu Quoc">Phu Quoc</label>
+					</div>
+				</div>
+			</div>
+			<div class="mt-2">
+				<p>Are there more people joining us?</p>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<label><input type="radio" name="morePeople" value="Yes">Yes</label>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<label><input type="radio" name="morePeople" value="No">No</label>
+					</div>
+				</div>
+			</div>
+			<div class="mt-2">
+				<p>How many people can join with us?</p>
+				<input type="number" name="numberOfAttendees" autocomplete="false" value="" class="ch3ch-b0t input-text">
+			</div>
+			<div class="mt-2">
+				<p>Do you need any help please help to note here</p>
+				<input type="text" name="Note" autocomplete="false" value="" class="ch3ch-b0t input-text">
+			</div>
+			<div class="wtr-group">
+				<p href="">I can’t join but I will give you the best wished*</p>
+				 <button type="Submit" class="btn-submit">Submit</button>
+			</div>
+		</form>
+	</div>		
+				
+	
 
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
@@ -203,9 +256,6 @@
 
 				</div>
 			</div>
-
-
-
 				<div class="container animate-box">
 					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
 						<a href="#" class="popup-vimeo"><i class="icon-video2"></i></a>
@@ -247,5 +297,37 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<!--Submit Form-->
+	<script>
+		document.getElementById('form2sheet').addEventListener('submit', async function (event) {
+			console.log('1')
+			event.preventDefault();
+			const formData = new FormData(this);
+			console.log('2')
+			const response = await fetch(this.action, {
+					method: 'POST',
+					body: formData,
+				});
+				console.log('3',{response})
+				if (response.ok) {
+					console.log('4')
+					// const result = await response.json();
+					alert('Form submitted successfully!');
+				} else {
+					console.log('5')
+					alert('Failed to submit the form');
+				}
+		});
+	</script>
+	<!--hide/display Form-->
+	<script>
+		$("#btn-join").click(function(){
+			$( "#form-join" ).addClass("visible");
+		});
+		$(".btn-submit").click(function(){
+			$( "#form-join" ).removeClass("visible");
+		});
+	</script>
+
 	</body>
 </html>
