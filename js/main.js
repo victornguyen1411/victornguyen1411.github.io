@@ -212,6 +212,7 @@
 	var parallax = function() {
 		$(window).stellar();
 	};
+	
 
 	
 	$(function(){

@@ -66,7 +66,7 @@
 #form-join .form-group .input-text{
 	width: calc(100% - 90px);
 }
-#form-join input[type="radio"]{
+#form-join input[type="radio"], #form-join input[type="checkbox"]{
 	margin: 4px 9px 0;
 }
 input[type=text], input[type=number] {
