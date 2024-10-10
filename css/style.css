@@ -647,14 +647,20 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 550px; /* Increased height for images */
   background-size: cover;
   background-position: center;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 
+#fh5co-wished-box .gallery-cell {
+  height: 363px;
+}
 /* Adjust for mobile */
 @media screen and (max-width: 480px) {
   .gallery-cell {
     width: 100%; /* 1 image per view on small screens */
     height: 500px; /* Maintain taller height on mobile */
+  }
+  #fh5co-wished-box .gallery-cell {
+    height: 450px;
   }
 }
 
