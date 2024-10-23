@@ -374,8 +374,8 @@
 					body: formData,
 				});
 				if (response.ok) {
-					$("#success").addClass("visible");
-					$("#success").show();
+					//$("#success").addClass("visible");
+					//$("#success").show();
 				} else {
 					alert('Failed to submit the form');
 				}
@@ -392,8 +392,8 @@
 					body: formData,
 				});
 				if (response.ok) {
-					$("#success").addClass("visible");
-					$("#success").show();
+					//$("#success").addClass("visible");
+					//$("#success").show();
 				} else {
 					alert('Failed to submit the form');
 				}
@@ -413,6 +413,8 @@
 			$(".btn-submit").click(function () {
 				$("#form-join").removeClass("visible");
 				$("#form-join").hide();
+				$("#success").addClass("visible");
+				$("#success").show();
 			});
 			$("#close-form-join").click(function () {
 				$("#form-join").removeClass("visible");
@@ -436,6 +438,8 @@
 			$(".btn-submit-wish").click(function () {
 				$("#form-wish").removeClass("visible");
 				$("#form-wish").hide();
+				$("#success").addClass("visible");
+				$("#success").show();
 			});
 
 			// Sự kiện đóng Success
