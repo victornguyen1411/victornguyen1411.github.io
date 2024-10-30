@@ -11,7 +11,7 @@
 	border: none;
 	padding: 6px 20px;
 }
-#form-join, #form-wish, #success{
+ #form-wish, #success{
 	position: fixed;
     top: 0;
     left: 0;
@@ -23,7 +23,7 @@
 	background-color: rgba(114, 112, 112, 0.7);
 	visibility: hidden;
 }
-#form-join.visible, #form-wish.visible, #success.visible{
+ #form-wish.visible, #success.visible{
 	animation: 1s fadeIn;
 	animation-fill-mode: forwards;
 }
@@ -45,7 +45,12 @@
 	  opacity: 1;
 	}
   }
-#form-join form, #form-wish form, #success .content{
+  #fh5co-form{
+	background: rgba(0, 0, 0, 0.04);
+	z-index: 3;
+  }
+
+#form-wish form, #success .content{
 	background: #fff;
     width: 90%;
     margin: 0 auto;
@@ -75,8 +80,19 @@
 	padding-right: 5px;
 }
 #form-join .form-group .input-text, #form-wish .form-group .input-text{
-	width: calc(100% - 90px);
+	width: calc(100% - 120px);
 }
+
+#form-join .form-group .input-text{
+	background: transparent;
+}
+#form-join input[type=number]{
+	background: transparent;
+}
+#form-join input[type=text]{
+	background: transparent;
+}
+
 #form-join input[type="radio"], #form-join input[type="checkbox"],
 #form-wish input[type="radio"], #form-wish input[type="checkbox"]{
 	margin: 4px 9px 0;
@@ -131,3 +147,4 @@ input[type=text]:focus,input[type=number]:focus {
     color: #1A88EE;
 	border: 1px solid #1A88EE;
 }
+

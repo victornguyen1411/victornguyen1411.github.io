@@ -6,6 +6,15 @@
   font-style: normal;
 }
 @font-face { font-family: Amsterdam; src: url('../fonts/AmsterdamOne.ttf'); } 
+@font-face { font-family: Sidneyland; src: url('../fonts/1FTV-Sidneyland.otf'); } 
+@font-face { font-family: Weekdays; src: url('../fonts/SVN-Weekdays-Santtuy.otf'); } 
+
+@font-face { font-family: Magellin;
+  src: url('../fonts/SVN-Magellin.otf');
+}
+
+body {
+  font-family: Magellin; } 
 /* =======================================================
 *
 * 	Template Style 
@@ -104,7 +113,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Sofia Sans Condensed";
+  /* font-family: "Sofia Sans Condensed"; */
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -127,7 +136,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li a {
   font-size: 20px;
-  font-family: Sofia Sans Condensed;
+  /* font-family: Sofia Sans Condensed; */
   padding: 30px 10px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
@@ -357,7 +366,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-counter,
 #fh5co-event {
-  height: 850px;
+  height: 1050px;
   float: left;
 }
 #fh5co-counter .display-t,
@@ -382,12 +391,15 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .overlay,
 #fh5co-event .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.04);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: 1; /* Make sure overlay stays behind the iframe */
+    pointer-events: none; /* Allow clicking through the overlay */
+
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter,
@@ -419,6 +431,8 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-bottom: 10px;
   }
 }
+
+
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
   font-size: 14px;
@@ -428,15 +442,17 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: Sofia Sans Condensed;
+  /* font-family: Sofia Sans Condensed; */
   font-size: 25px;
+  position: relative;
+  z-index: 2;
 }
 #fh5co-counter .event-wrap p, #fh5co-counter .event-wrap span,
 #fh5co-event .event-wrap p,
 #fh5co-event .event-wrap span {
   display: block;
   color: rgba(0, 0, 0, 0.8);
-  font-family: Sofia Sans Condensed;
+  /* font-family: Sofia Sans Condensed; */
   font-size: 20px;
 }
 #fh5co-counter .event-wrap i,
@@ -651,6 +667,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-wished-box .gallery-cell {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Bo góc 15px */
+  box-shadow: inset 10px 1px 20px 20px rgb(245 245 245); /* Tạo bóng mờ */
+  overflow: hidden; /* Đảm bảo ảnh bị cắt theo bo góc */
+  height: 300px; /* Chiều cao của mỗi ảnh */
   height: 363px;
 }
 /* Adjust for mobile */
@@ -812,7 +834,7 @@ form label {
   color: #646464;
   border: none !important;
   font-size: 16px;
-  font-family: Sofia Sans Condensed;
+  /* font-family: Sofia Sans Condensed; */
   text-transform: uppercase;
 }
 #fh5co-header .display-tc .btn:hover,
@@ -1060,12 +1082,12 @@ form label {
   margin-bottom: 2em;
 }
 .fh5co-heading h2 {
-  font-size: 60px;
+  font-size: 80px;
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
   color: #646464;
-  font-family: "Amsterdam", Arial, serif;
+  font-family: "Weekdays", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
@@ -1311,7 +1333,7 @@ form label {
   background: black;
   font-size: 14px;
   font-weight: bold;
-  font-family: Sofia Sans Condensed; 
+  /* font-family: Sofia Sans Condensed;  */
   top: 0;
   right: 0;
   top: 0;
@@ -1725,6 +1747,7 @@ form label {
 .js .animate-box {
   opacity: 0;
 }
+
 
 /*# sourceMappingURL=style.css.map */
 
